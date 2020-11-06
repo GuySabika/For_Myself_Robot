@@ -36,6 +36,16 @@ deploy {
         }
     }
 }
+repositories {
+    jcenter()
+    maven {
+        url 'http://devsite.ctr-electronics.com/maven/release'
+    }
+    maven {
+        url 'https://frcmaven.wpi.edu/artifactory/release'
+    }
+}
+
 
 // Set this to true to enable desktop support.
 def includeDesktopSupport = true
@@ -46,6 +56,9 @@ dependencies {
     implementation wpi.deps.wpilib()
     nativeZip wpi.deps.wpilibJni(wpi.platforms.roborio)
     nativeDesktopZip wpi.deps.wpilibJni(wpi.platforms.desktop)
+
+    implementation group: 'com.ctre.phoenix', name: 'api-java', version: '5.17.6'
+    implementation group: 'com.ctre.phoenix', name: 'wpiapi-java', version: '5.17.6'
 
 
     implementation wpi.deps.vendor.java()
