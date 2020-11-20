@@ -45,7 +45,7 @@ public class MoveElevators extends CommandBase {
 
     @Override
     public boolean isFinished() {
-        if (countBall>=3){
+        if (countBall >= 3) {
             return true;
         }
         return false;
